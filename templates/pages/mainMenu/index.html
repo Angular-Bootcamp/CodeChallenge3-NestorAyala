@@ -1,0 +1,47 @@
+        <div class="row searchBarAndSort">
+			<div class="col-xs-10 navbar-search" action="">
+                <input type="text" class="search-query span2" placeholder="Search...">
+			</div>
+            <div class="col-xs-2 sorting" action="">
+                <img src="../../../css/sprites/bars0.png">
+			</div>
+		</div>
+
+<main class="container-fluid" ng-controller="pokeController">
+		
+        <section ng-repeat="n in [] | range:2" class="pokedex-block">
+			<header class="row vertical-align-list">
+				
+                <!-- ONE -->
+                <div class="pokemon-image col-xs-2">
+					<img class="img-responsive" alt="Pokemon" data-ng-src="{{currentPokeImg}}">
+				</div>
+				<!-- ONE -->
+                
+                <!--TWO -->
+                <div class="pokemon-name col-xs-5">
+					
+                    <div class="row">
+						<div class="col-xs-6">
+							<h2>{{currentPokemon.name}}</h2>
+						</div>
+						
+					</div>
+                    
+                    <div class="col-xs-1">
+                        <div class="pokemon-types">
+                            <span ng-repeat="type in currentPokemon.types" class="pokemon-type {{type.name}}"></span>
+                        </div>
+                    </div>
+                    
+				</div>
+                <!-- TWO -->
+                
+                <div class="col-xs-5 textAndIcons"><h6>#{{("000" + currentPokemon.national_id).slice(-3)}} </h6>
+                <div class="col-xs-12 icons">
+							<img src="../../../css/sprites/poke0.png">
+							<img src="../../../css/sprites/star0.png">
+						</div></div>        
+			</header>
+		</section>
+</main>

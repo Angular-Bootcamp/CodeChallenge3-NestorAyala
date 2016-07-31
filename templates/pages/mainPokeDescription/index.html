@@ -1,0 +1,127 @@
+
+    <!-- class="navbar navbar-pokedex" 
+    <nav class="row headerWrapper" style="margin-right: 0px;">
+			<div class="col-xs-12 text-center">
+                <!-- FontTastic sign
+				<a class="Return" href="#/mainMenu">
+					<i class="fa fa-chevron-left fa-lg" aria-hidden="true"></i>
+				</a>
+				Description
+			</div> --
+		</nav>
+    -->
+    
+		<main class="container-fluid" ng-controller="pokeController">
+		
+        <section class="pokedex-block">
+			<header class="row vertical-align">
+				
+                <div class="pokemon-image col-xs-1">
+					<img class="img-responsive" alt="Pokemon" data-ng-src="{{currentPokeImg}}">
+				</div>
+				
+                <div class="pokemon-name col-xs-11">
+					
+                    <div class="row vertical-align">
+						<div class="col-xs-6">
+							<h2>#{{("000" + currentPokemon.national_id).slice(-3)}}~{{currentPokemon.name}}</h2>
+						</div>
+						<div class="col-xs-6 icons">
+							<img src="../../../css/sprites/poke0.png">
+							<img src="../../../css/sprites/star0.png">
+						</div>
+					</div>
+                    
+                    
+                    <div class="pokemon-info">
+                        <ul class="list-inline">
+                            <li><h3>{{currentPokemon.height/10}}m, {{currentPokemon.weight/10}}kg</h3></li>
+                        </ul>
+                        
+                        <h3>{{ currentDescription.description }}</h3>
+                        
+                        <ul class="list-inline">
+                            <span>{{currentDescription}}</span>
+                        </ul>
+                        
+                        <!--
+                        <p> {{currentDescription.description}} </p>
+                        -->
+
+                        <div class="pokemon-types">
+                            <span ng-repeat="type in currentPokemon.types" class="pokemon-type {{type.name}}"></span>
+                        </div>
+                    </div>
+                    
+				</div>
+			</header>
+            
+            <!-- We define a new section -->
+			<div class="row">
+					
+                    <div class="generalInfoWrapper"> General Information </div>
+    
+					
+                    <!-- Table -->
+					<div class="table-responsive">
+						<table class="table">
+							
+								
+                                <tr>
+									<td>Hidden Abilities</td>
+									<td>
+										<ul class="list-inline">
+											<li ng-repeat="ability in currentPokemon.abilities">{{ability.name}}</li>
+										</ul>
+									</td>
+								</tr>
+                                
+								<tr>
+									<td>Location</td>
+									<td>
+										<span ng-if="!!pokemon.location_area_encounters">
+											Starter pokemon on <b>{{currentPokemon.region}} Region</b>
+										</span>
+										<!-- toDO: iterate over location_area_enconters if not empty-->
+									</td>
+								</tr>
+                                
+							
+						</table>
+					</div>
+                    
+				
+			</div> <!-- End of wrapper #2 Info-->
+            
+            
+			<div class="row">
+				
+					<div class="evolutionTitleWrapper"> Evolution </div>
+					<div class="table-responsive">
+						<table class="table evolution-table">
+							
+                            <tr ng-repeat="evolution in pokemon.evolutions">
+								<td class="col-xs-4">
+									<img class="img-responsive" alt="bulbasaur" data-ng-src="{{evolution.image}}">
+								</td>
+                                
+								<td class="pokemon-evolution col-xs-8">
+									<span class="pokemon-number">#{{("000" + evolution.id).slice(-3)}}</span>
+									<h4>{{evolution.name}}</h4>
+									<p>LV. {{evolution.minLevel}}</p>
+									
+                                    <div class="pokemon-types">
+										<span ng-repeat="type in evolution.types" class="pokemon-type {{type.name}}"></span>
+									</div>
+                                    
+								</td>
+							</tr>
+                            
+						</table>
+					</div>
+				
+			</div> <!-- End of wrapper #3 -->
+            
+		</section>
+            
+      </main>
