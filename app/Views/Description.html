@@ -1,0 +1,94 @@
+<div class="container-fluid">
+    <div class="pokemonMainDescription">
+        <div class="row">
+            <div class="col-xs-8 col-xs-push-4">
+                <div class="row rightContainer">
+                    <div class="col-xs-8">
+                        <h4 class="PokemonName">
+                        #{{Pokemon.Current.number}} {{Pokemon.Current.name}}
+                    </h4>
+                        <h5 class="Pokemon-specs">
+                        {{Pokemon.Current.height}}, {{Pokemon.Current.weight}}
+                    </h5>
+                    </div>
+
+                    <div class="col-xs-2 IconAlign">
+                        <!-- Need to chain/false down below-->
+                        <img src="../Images/Buttons/empty-plate.png" />
+                    </div>
+
+                    <div class="col-xs-2 IconAlign">
+                        <!-- Need to chain/false down below-->
+                        <img src="../Images/Buttons/star.png" />
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-4">
+                <img class="pokemonimg" ng-src="{{Pokemon.Current.image}}" />
+            </div>
+            <div class="col-xs-8">
+                <div class="row">
+                    <div class="col-xs-12 ">
+                        <h5 class="Pokemon-Description">
+                        {{Pokemon.Current.description}}
+                    </h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-4" ng-repeat="type in Pokemon.Current.types">
+                        <h5 class="type" ng-class="type">
+                        {{type}}
+                    </h5>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-xs-12 container-gray">
+            <h4 class="font-white">
+                General Information
+            </h4>
+        </div>
+    </div>
+    <div class="row border-gray title">
+        <div class="col-xs-6">
+            <h4 class="font-grayDark">
+                Hidden Hability
+            </h4>
+        </div>
+        <div class="col-xs-6">
+            <h4 class="font-gray">
+                {{Pokemon.Current.hidden}}
+            </h4>
+        </div>
+    </div>
+    <div class="row border-gray title">
+        <div class="col-xs-6">
+            <h4 class="font-grayDark">
+                Location
+            </h4>
+        </div>
+        <div class="col-xs-6">
+            <h4 class="font-gray">
+                {{Pokemon.Current.location}}
+            </h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 container-gray">
+            <h4 class="font-white">
+                Evolution
+            </h4>
+        </div>
+    </div>
+    <div ng-repeat="pokemon in Pokemon.Current.EvolutionChain" class="level">
+        <pokemon-container pokemon="pokemon" showem="true"></pokemon-container>
+    </div>
+</div>

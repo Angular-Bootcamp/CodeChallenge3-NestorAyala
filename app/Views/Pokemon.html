@@ -1,0 +1,14 @@
+<div class="container-fluid">
+    <div class="row search border-gray">
+        <div class="col-xs-10">
+            <input class="form-control" type="text" placeholder="Search..." ng-model="search.name" />
+        </div>
+        <div class="col-xs-2">
+            <img ng-click="SortBy()" class="img-responsive" role="button" src="images/buttons/filter-results-button.png" />
+        </div>
+    </div>
+
+    <div ng-repeat="pokemon in Pokemon.getAll  | filter:search | inArray:Caught.getAll():'number':Caught.IsEnabled | inArray:BattleBox.getAll():'number':BattleBox.IsEnabled | orderBy:SortOrder">
+        <pokemon-container pokemon="pokemon" showem="false"></pokemon-container>
+    </div>
+</div>

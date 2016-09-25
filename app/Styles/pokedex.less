@@ -1,0 +1,281 @@
+@import "reset.css";
+
+/*-----Prevents iPhone from resizing in landscape mode -----*/
+
+html {
+    -webkit-text-size-adjust: none;
+}
+
+
+/*----------- apply a natural box layout model to all elements --------------*/
+
+* {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 528px) and (-webkit-min-device-pixel-ratio: 2) {}
+
+//Fonts
+.font-gray {
+    color: @color-scheme3-grey;
+}
+
+.font-grayDark {
+    color: darken(@color-scheme3-grey, 20%);
+}
+
+.font-white {
+    color: @white;
+}
+
+.font-bold {
+    font-weight: 150;
+}
+
+
+/*----- BODY -----*/
+
+body {
+    font-family: 'Helvetica', sans-serif;
+}
+
+
+/*----- HEADER -----*/
+
+#myNav {
+    display: none;
+}
+
+
+/* Hides display on start*/
+
+nav {
+    background-color: #E91E63;
+    color: transparent; //Check this DEVEOLPMENT USE ONLY
+    width: 100%;
+}
+
+nav span {
+    color: @white;
+    font-size: 16px;
+    text-align: center;
+    left: 30px;
+}
+
+button#showPhoneNav {
+    top: 7px;
+    left: 7px;
+    width: 50px;
+    height: 35px;
+    background-image: url('../images/buttons/menu-icon-large.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 21px, 100%;
+    color: @white;
+    font-size: 16px;
+    background-color: #E91E63;
+    //background-color: #C2185B;
+    text-align: center;
+    border: none;
+}
+
+button:hover {
+    background-color: rgba(0, 0, 0, .1);
+}
+
+nav ul li a {
+    color: white;
+    display: block;
+    text-align: center;
+    padding: 10px 0;
+    border-top: 1px solid white;
+    text-decoration: none;
+}
+
+ul li a:hover {
+    color: white;
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, .3);
+}
+
+
+/*----- BODY   -----*/
+
+body {
+    font-family: @font;
+}
+
+
+/*----- HEADER -----*/
+
+nav {
+    background-color: @color-scheme2-red;
+    //margin-bottom: 20px;
+}
+
+p#mainTitle {
+    //z-index: 1;
+    position: relative;
+    bottom: 10px;
+}
+
+
+/*----- BODY -----*/
+
+.PokemonName {
+    color: @color-scheme1-violet;
+    font-size: 20px;
+}
+
+.text-right {
+    width: 43px;
+}
+
+.IconAlign {
+    padding: 7px 0;
+}
+
+.nopadding {
+    padding: 0px;
+}
+
+.Pokemon-specs {
+    color: @color-scheme3-grey;
+    font-size: 13px;
+}
+
+.level {
+    color: @color-scheme3-grey;
+    font-size: 13px;
+}
+
+.pokemonMainDescription {
+    padding-top: 7px;
+    padding-bottom: 22px;
+    margin: 2px 2px;
+}
+
+.Pokemon-Description {
+    color: @color-scheme3-grey;
+    font-size: 16px;
+}
+
+.search {
+    padding-bottom: 15px;
+}
+
+.pokemon-image-container {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.pokemon-image {
+    width: 70px;
+    height: 66px;
+}
+
+.rightContainer {
+    padding-top: 10px;
+    padding-bottom: 8px;
+}
+
+
+/*----- POKeMON TYPES -----*/
+
+.type {
+    color: #fff;
+    font-size: 10px;
+    text-align: center;
+    border-radius: 4px;
+    padding: 2px 0px;
+    margin-right: 0px;
+    &.Grass {
+        background-color: @Grass;
+    }
+    &.Poison {
+        background-color: @Poison;
+    }
+    &.Bug {
+        background-color: @Bug;
+    }
+    &.Fire {
+        background-color: @Fire;
+    }
+    &.Water {
+        background-color: @Water;
+    }
+    &.Flying {
+        background-color: @Flying;
+    }
+    &.Normal {
+        background-color: @Normal;
+    }
+    &.Electric {
+        background-color: @Electric;
+    }
+    &.Ground {
+        background-color: @Ground;
+    }
+    &.Fairy {
+        background-color: @Fairy;
+    }
+    &.Fighting {
+        background-color: @Fighting;
+    }
+    &.Rock {
+        background-color: @Rock;
+    }
+    &.Steel {
+        background-color: @Steel;
+    }
+    &.Ice {
+        background-color: @Ice;
+    }
+    &.Ghost {
+        background-color: @Ghost;
+    }
+    &.Dragon {
+        background-color: @Dragon;
+    }
+    &.Dark {
+        background-color: @Dark;
+    }
+    &.Psychic {
+        background-color: @Psychic;
+    }
+}
+
+
+/* MAIN DESCRIPTION settings*/
+
+.container-gray {
+    background-color: @color-scheme3-grey;
+    padding: 6px 5px;
+}
+
+.col-xs-12,
+.container-gray {
+    padding: 10px 19px;
+}
+
+.border-gray {
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: @color-scheme3-grey;
+    padding: 3px 0px;
+}
+
+.centerInfoBlock {
+    padding-top: 30px;
+}
+
+.title {
+    padding: 10px 5px;
+}
+
+.pokemonimg {
+    margin: 0 20px;
+    width: 50px;
+}

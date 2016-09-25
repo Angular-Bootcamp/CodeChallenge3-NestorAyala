@@ -1,0 +1,64 @@
+<!doctype html>
+<html ng-app="Pokedex">
+
+<head>
+    <meta charset="utf-8">
+    <title>Pokedex Project: Kanto Region Edition</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet/less" type="text/css" href="Styles/main.less" />
+    <!-- endbuild -->
+</head>
+
+<body>
+    <header>
+        <div>
+            <div id="menuCollapse text-center" ng-controller="TitleCtrl">
+                <nav>
+                    <button id="showPhoneNav"></button>
+                    <span><p id="mainTitle">{{pageTitle}}</p></span>
+                    <ul id="myNav">
+                        <li><a href="#/Pokemon">All Pokémon</a></li>
+                        <li><a href="#/CaughtPokemon?Caught=0">Caught Pokémon</a></li>
+                        <li><a href="#/BattleBox?BattleBox=1">Battle Box</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- bower:js -->
+    <ng-view></ng-view>
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="../bower_components/angular-resource/angular-resource.js"></script>
+    <script src="../bower_components/angular-route/angular-route.js"></script>
+    <script src="../bower_components/less/less.js"></script>
+
+    <script src="Scripts/jQuery/hideMenu.js"></script>
+    <script src="Scripts/routes.js"></script>
+    <script src="Scripts/main.js"></script>
+
+    <script src="Scripts/Controllers/PokemonController.js"></script>
+    <script src="Scripts/Controllers/TitleController.js"></script>
+
+    <script src="Scripts/Services/AppData.js"></script>
+
+    <script src="Scripts/Filters/AppFilters.js"></script>
+
+    <script src="Scripts/Directives/AppDirective.js"></script>
+
+</body>
+
+</html>
